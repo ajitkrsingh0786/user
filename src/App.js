@@ -28,11 +28,30 @@ class  App extends Component {
 
   render(){
            console.log(this.state.users[0]);
+
+           const users = this.state.users.map( user => {
+                    
+                 return (
+                  <li key={user.id}>
+                  <div className="user-image user-row">
+                      <img src={user.profilepicture} alt="img" className="user-image"/>
+                   </div>
+
+                   <div className="user-row">
+                        {user.name}
+                   </div>
+                   
+                   </li>
+                 )
+
+           })
   return (
     <div className="App">
       <div >
           
           <h1>Hellow Ajit</h1>
+
+         <ul>{users}</ul>
 
        </div>
     </div>
